@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <title>🗽LIFE OS</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Life OS</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <iframe src="sidebar.html" width="200" height="660"></iframe>
-    <script src="script.js"></script>
+
+  <header>
+    <div class="header-left">
+      <div id="greeting"></div>
+      <div id="fullDate"></div>
+    </div>
+
+    <div class="header-right">
+      <div id="liveTime"></div>
+      <div>
+        STREAK: <span id="streakCount">0</span> |
+        TODAY: <span id="todayCompletion">0/0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="column">
+      <h2>Links</h2>
+      <div class="content links-list">
+        <a href="https://leetcode.com" target="_blank">LeetCode</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://cms.cb.amrita.edu/" target="_blank">CMS</a>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Daily <button onclick="addDaily()">+</button></h2>
+      <div class="content" id="dailyList"></div>
+    </div>
+
+    <div class="column">
+      <h2>Weekly <button onclick="addWeekly()">+</button></h2>
+      <div class="content" id="weeklyList"></div>
+    </div>
+
+    <div class="column">
+      <h2>Todo <button onclick="addTodo()">+</button></h2>
+      <div class="content" id="todoList"></div>
+    </div>
+
+    <div class="column">
+      <h2>Dates</h2>
+      <div class="date-form">
+        <input type="text" id="dateTitleInput" placeholder="Event name">
+        <input type="date" id="dateInput">
+        <button onclick="addDate()">Add</button>
+      </div>
+      <div class="content" id="dateList"></div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
